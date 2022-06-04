@@ -1,0 +1,79 @@
+// ================= TOPSALE PRODUCT ==================
+.topsale-section {
+  margin-bottom: 3rem;
+}
+.topsale {
+  &-main {
+    background-color: $gm-white-color;
+    border-radius: $gm-border-radius;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &-grid {
+    margin: 2rem;
+    padding-bottom: 2.5rem;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    li {
+      display: none;
+      &:nth-child(-n + 12) {
+        display: block;
+      }
+    }
+  }
+  &-btn {
+    margin: 0 auto;
+    transition: opacity 0.2s ease;
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+  &-circle-loading {
+    display: none;
+    margin: 0 auto 3rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 5px;
+    border-color: transparent $gm-primary-color $gm-primary-color transparent;
+    animation: loading .8s linear infinite;
+  }
+}
+.topsale-product {
+  font-size: $gm-normal-size;
+  text-decoration: none;
+  color: inherit;
+  padding: 1.4rem;
+  height: 28rem;
+  border: 1px solid transparent;
+  border-radius: $gm-border-radius;
+  transition: all 0.2s ease-in-out;
+  @include flexCenter(col);
+  &__img {
+    width: 14rem;
+    height: 14rem;
+  }
+  &__name {
+    width: 100%;
+    line-height: 1.25;
+    font-weight: 500;
+    margin-top: 0.8rem;
+    margin-bottom: auto;
+    @include textClamp(3);
+  }
+  &__price {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $gm-primary-color;
+    width: 100%;
+    text-align: left;
+  }
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+}

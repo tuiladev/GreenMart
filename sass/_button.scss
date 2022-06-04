@@ -1,0 +1,16 @@
+.btn {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 10px 20px;
+  font-size: $gm-normal-size;
+  font-weight: 500;
+  line-height: 1.25;
+  text-decoration: none;
+  &--fill{
+    border-radius: 4px;
+    color: #fff;
+    background-color: $gm-primary-color;
+  }
+}

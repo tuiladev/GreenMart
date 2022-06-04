@@ -1,0 +1,73 @@
+// ================= FLASHSALE PRODUCT ==================
+.flashsale-section {
+  margin-bottom: 3rem;
+}
+.flashsale-main {
+  background-color: #fff;
+  border-radius: $gm-border-radius;
+}
+.flashsale-header {
+  position: relative;
+  &__link {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translatey(-50%);
+    text-decoration: none;
+    color: $gm-primary-color;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+}
+.flashsale-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  margin: 2rem;
+  padding-bottom: 2.5rem;
+}
+.flashsale-product {
+  @include flexCenter(col);
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  &__img {
+    width: 14rem;
+    height: 14rem;
+  }
+  &__label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: $gm-red-color;
+    border-radius: 0px 0px 4px 4px;
+  }
+  &__price {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: $gm-primary-color;
+    margin: 0.8rem 0 1.2rem;
+  }
+  &__progress {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    padding: 0.3rem 3.9rem;
+    border-radius: 100rem;
+    background-color: #acd8b4;
+    z-index: 0;
+    position: relative;
+    overflow: hidden;
+    &-thumb {
+      position: absolute;
+      inset: 0;
+      background-color: $gm-primary-color;
+      z-index: -1;
+    }
+  }
+}

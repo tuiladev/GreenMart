@@ -1,0 +1,29 @@
+@mixin topArrow {
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2rem;
+    right: 1rem;
+    border-width: 1rem;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+  }
+}
+
+@mixin flexCenter($direction:"") {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @if $direction == col {
+    flex-direction: column;
+  }
+}
+
+@mixin textClamp($line) {
+  display:-webkit-box;
+  -webkit-line-clamp:$line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}

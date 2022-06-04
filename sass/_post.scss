@@ -1,0 +1,97 @@
+.post {
+  margin: 5rem 0;
+  &-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: $gm-white-color;
+    border-radius: $gm-border-radius;
+    gap: 2.4rem;
+    padding-bottom: 9.6rem;
+  }
+  &-content {
+    padding: 4.8rem;
+  }
+  &-nav {
+    padding: 4.8rem 4.8rem 4.8rem 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+  }
+  &__title {
+    font-size: 3.2rem;
+    font-weight: 500;
+    margin: 1.2rem 0 2.4rem;
+  }
+  &__date {
+    display: inline-block;
+    font-size: 1.6rem;
+    margin-bottom: 2.4rem;
+  }
+  &__img {
+    width: 100%;
+    margin: 2.4rem 0 3.2rem;
+    img {
+      object-fit: cover;
+      border-radius: $gm-border-radius;
+      margin: 0 auto;
+    }
+    figcaption {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-top: 1.6rem;
+    }
+  }
+  &__text {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.8;
+    margin: 1.2rem 0;
+  }
+  &__heading {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 3.2rem 0 1.2rem;
+  }
+  &__back {
+    display: inline-block;
+    margin: 3rem auto 0;
+  }
+  ul {
+    list-style: none;
+    li {
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 1.8;
+      margin-left: 3.2rem;
+    }
+  }
+}
+
+// POST NAV LIST
+.post-nav {
+  &-list {
+    position: sticky;
+    top: 0;
+    padding-top: 2.4rem;
+    a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border-left: 2px solid transparent;
+      padding: 0.5rem;
+      &:hover,
+      &:visited {
+        background-color: $gm-gray-light-color;
+        border-left: 2px solid $gm-primary-color;
+      }
+      &:active {
+        color: $gm-primary-color;
+      }
+      &.active {
+        background-color: $gm-gray-light-color;
+        border-left: 2px solid $gm-primary-color;
+        font-weight: 500;
+      }
+    }
+  }
+}

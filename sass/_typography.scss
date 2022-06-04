@@ -1,0 +1,22 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $gm-primary-font;
+  font-weight: 500;
+  color: $gm-text-color;
+  line-height: 1;
+}
+
+.heading-secondary {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2rem;
+  border-bottom: 1px solid $gm-gray-light-color;
+  text-transform: uppercase;
+  &-highlight {
+    color: $gm-primary-color;
+  }
+}

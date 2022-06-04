@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cá chiên, đỗ luộc và canh nấu rau củ</title>
+    <link rel="icon" href="./images/favicon.svg" type="image/x-icon" />
+    <!-- Icon -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/blog.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="container">
+          <div class="header-main">
+            <!-- LOGO -->
+            <a href="./index.html" class="header-logo__link">
+              <img
+                src="./images/logo.svg"
+                alt="Green Mart - Sieu Thi Xanh"
+                class="header-logo__img"
+              />
+            </a>
+
+            <!-- SEARCH BAR -->
+            <div class="header-search">
+              <input
+                type="text"
+                class="header-search__box"
+                placeholder="Lốc 4 hộp sữa TH True Milk - Giá chỉ 25K"
+                oninput="searchText()"
+                maxlength="128"
+              />
+              <button class="header-search__btn">
+                <ion-icon
+                  class="header-search__btn-icon"
+                  name="search-outline"
+                ></ion-icon>
+              </button>
+              <div class="header-search__suggest">
+                <ul class="suggest-list">
+                  <li>
+                    <a href="#" class="suggest-content"
+                      >Lốc 4 hộp sữa TH True Milk - Giá chỉ 25K</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- TOOLS -->
+            <ul class="header-tool">
+              <li class="header-tool__hotline">
+                <a href="tel: 19001928">
+                  1900 1928
+                  <span>Hỗ trợ 24/7</span>
+                </a>
+              </li>
+              <li class="header-tool__notify">
+                <a href="#">
+                  <ion-icon
+                    class="header-tool__icon"
+                    name="notifications-outline"
+                  ></ion-icon>
+                </a>
+                <span class="header-tool__title">Thông báo</span>
+                <div class="header-notify">
+                  <div class="header-notify--notlogin">
+                    <img src="./images/notify-img.png" alt=":((" />
+                    <p>Đăng nhập để xem Thông báo</p>
+                  </div>
+                </div>
+              </li>
+              <li class="header-tool__auth">
+                <a href="#">
+                  <ion-icon
+                    class="header-tool__icon"
+                    name="person-circle-outline"
+                  ></ion-icon>
+                </a>
+                <span class="header-tool__title">Đăng Nhập</span>
+              </li>
+              <li class="header-tool__cart">
+                <a href="#">
+                  <ion-icon
+                    class="header-tool__icon"
+                    name="cart-outline"
+                  ></ion-icon>
+                </a>
+                <span class="header-tool__title">Giỏ hàng</span>
+                <div class="header-cart">
+                  <div class="header-cart--empty">
+                    <img
+                      src="./images/cart-img.png"
+                      alt="Chưa có sản phẩm nào"
+                    />
+                    <p>Chưa Có Sản Phẩm</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <!-- LOGIN / SIGNUP FORM -->
+            <div class="overlay"></div>
+            <div class="header-auth">
+              <!-- LOGIN FORM -->
+              <form action="#" class="form--login" onsubmit="return false">
+                <h2 class="form__name">Đăng nhập</h2>
+                <div class="form__field">
+                  <input
+                    type="text"
+                    placeholder="Email / Số điện thoại / Tên đăng nhập"
+                  />
+                </div>
+                <div class="form__field form__password-box">
+                  <input type="password" placeholder="Mật khẩu" />
+                  <ion-icon
+                    class="form__password-box__icon"
+                    name="eye-outline"
+                  ></ion-icon>
+                </div>
+                <input type="submit" value="ĐĂNG NHẬP" class="form__submit" />
+                <a href="#" class="form__forgot">Quên mật khẩu</a>
+                <span class="form__break">Hoặc</span>
+                <ul class="form__social">
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./images/facebook-logo.svg"
+                        alt="Facebook-Logo"
+                        class="form__social__icon"
+                      />
+                      <span>Facebook</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./images/google-logo.svg"
+                        alt="google-Logo"
+                        class="form__social__icon"
+                      />
+                      <span>Google</span>
+                    </a>
+                  </li>
+                </ul>
+                <p class="form__text">
+                  Bạn chưa có tài khoản?
+                  <a href="#" class="form__signup-link">Đăng Ký</a>
+                </p>
+              </form>
+
+              <!-- SIGNUP FORM -->
+              <form action="#" class="form--signup" onsubmit="return false">
+                <h2 class="form__name">Đăng ký</h2>
+                <div class="form__field">
+                  <input
+                    type="text"
+                    placeholder="Email / Số điện thoại / Tên đăng nhập"
+                  />
+                </div>
+                <div class="form__field form__password-box">
+                  <input type="password" placeholder="Mật khẩu" />
+                </div>
+                <div class="form__field form__password-box">
+                  <input type="password" placeholder="Xác nhận mật khẩu" />
+                  <ion-icon
+                    class="form__password-box__icon"
+                    name="eye-outline"
+                  ></ion-icon>
+                </div>
+                <input type="submit" value="ĐĂNG KÝ" class="form__submit" />
+                <p class="form__text">
+                  Bằng việc đăng ký, bạn đồng ý với Green Mart về
+                  <a href="">chính sách bảo mật</a> &
+                  <a href="">điều khoản dịch vụ</a>
+                </p>
+                <span class="form__break">Hoặc</span>
+                <ul class="form__social">
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./images/facebook-logo.svg"
+                        alt="Facebook-Logo"
+                        class="form__social__icon"
+                      />
+                      <span>Facebook</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./images/google-logo.svg"
+                        alt="google-Logo"
+                        class="form__social__icon"
+                      />
+                      <span>Google</span>
+                    </a>
+                  </li>
+                </ul>
+                <p class="form__text">
+                  Bạn đã có tài khoản?
+                  <a href="#" class="form__signup-link">Đăng Nhập</a>
+                </p>
+              </form>
+            </div>
+
+            <!-- Mobile Nav -->
+            <ion-icon class="mobile-nav__icon" name="menu-outline"></ion-icon>
+          </div>
+        </div>
+      </header>
+      <main>
+        <!-- SCROLL TO TOP -->
+        <div class="scroll-to-top">
+          <ion-icon
+            class="scroll-to-top__icon"
+            name="chevron-up-outline"
+          ></ion-icon>
+        </div>
+
+        <!-- POST -->
+        <section class="post">
+          <div class="container">
+            <div class="post-main">
+              <div class="post-content">
+                <h1 class="post__title">
+                  Cá chiên, đỗ luộc và canh nấu rau củ
+                </h1>
+                <span class="post__date">25 Tháng 5, 2022</span>
+                <div class="post__img">
+                  <img
+                    src="./images/blog/post-1.png"
+                    alt="Cá chiên, đỗ luộc và canh nấu rau củ"
+                  />
+                </div>
+                <p class="post__text">
+                  Lẩu cá chép giòn có vị chua chua, the the nơi đầu lưỡi kết hợp
+                  với độ săn chắc của cá mang đến những hương vị mới mẻ và hấp
+                  dẫn. Trong bài viết sau đây, hãy cùng Green Mart tìm hiểu cách
+                  làm món lẩu cá chép giòn này nhé!
+                </p>
+                <h2 class="post__heading" id="ingredient">Nguyên Liệu</h2>
+                <ul>
+                  <li>1 con cá chép</li>
+                  <li>4 quả cà chua</li>
+                  <li>500g xương ống heo</li>
+                  <li>1 quả dứa</li>
+                  <li>Rau ăn kèm: Bắp chuối, rau muống, rau cần ...</li>
+                  <li>Thì là</li>
+                  <li>Hành tím, tỏi, gừng, mẻ</li>
+                  <li>Nước mắm, hạt nêm, muối, bột ngọt</li>
+                </ul>
+                <h2 class="post__heading" id="step-1">
+                  Bước 1: Sơ chế nguyên liệu
+                </h2>
+                <p class="post__text">
+                  Cá chép giòn khi mua về, bạn đánh sạch vẩy, làm sạch phần bụng
+                  và mang cá, rồi đem cá rửa sạch. Để cá chép giòn không nhớt và
+                  không bị tanh, bạn dùng muối hột cùng gừng băm nhỏ chà xát vào
+                  quanh thân và bụng cá rồi rửa lại nhiều lần với nước.
+                </p>
+                <p class="post__text">
+                  Xương ống heo bạn đem rửa sạch, chần sơ với nước sôi rồi vớt
+                  ra rửa lại lần nữa cho sạch.
+                </p>
+                <p class="post__text">
+                  Dứa bạn đem gọt vỏ, bỏ mắt, cắt lát mỏng.
+                </p>
+                <p class="post__text">Cà chua rửa sạch, cắt múi cau.</p>
+                <p class="post__text">Thì là rửa sạch cắt khúc nhỏ.</p>
+                <p class="post__text">
+                  Các loại rau ăn kèm bạn đem ngâm với nước muối pha loãng rồi
+                  vớt ra rổ để ráo nước.
+                </p>
+                <p class="post__text">
+                  Gừng bạn đem cạo sạch vỏ, rửa sạch rồi băm nhỏ.
+                </p>
+                <p class="post__text">
+                  Mẻ bạn đem nghiền cùng ít nước rồi lọc qua rây để loại bã.
+                </p>
+                <p class="post__text">Tỏi, hành khô bóc vỏ, băm nhuyễn.</p>
+                <h2 class="post__heading" id="step-2">Bước 2: Nấu nước dùng</h2>
+                <p class="post__text">
+                  Bạn cho nồi nước lên bếp, khi nước sôi thì cho xương ống heo
+                  vào nấu cùng. Thường xuyên vớt bọt để nước lẩu trong hơn.
+                </p>
+                <p class="post__text">
+                  Tiếp đến, bạn cho vào nồi lẩu ít muối, bột ngọt và đường rồi
+                  hầm xương trong 3 tiếng để lấy nước dùng.
+                </p>
+                <h2 class="post__heading" id="step-3">Bước 3: Nấu lẩu</h2>
+                <p class="post__text">
+                  Khi nước dùng hoàn thành, bạn cho dầu ăn cùng hành tỏi vào phi
+                  thơm.
+                </p>
+                <p class="post__text">
+                  Tiếp đến, bạn cho cà chua, dứa cùng cá chép vào xào săn rồi
+                  cho nước mẻ vào.
+                </p>
+                <p class="post__text">
+                  Khi nước mẻ sôi, bạn cho nước dùng xương ống vào cùng với nước
+                  mắm, gừng, tiêu, đường, bột ngọt và ít ớt rồi đảo đều.
+                </p>
+                <h2 class="post__heading" id="step-4">Bước 4: Hoàn thành</h2>
+                <p class="post__text">
+                  Khi nước lẩu sôi, bạn nêm nếm lại lần nữa cho vừa ăn rồi nấu
+                  thêm 5 phút nữa thì cho thì là cắt khúc vào và tắt bếp.
+                </p>
+                <p class="post__text">
+                  Bạn dọn lẩu ra và nhúng rau vào ăn kèm là thưởng thức được rồi
+                  đấy! Đừng quên chuẩn bị thêm đĩa nước mắm nguyên chất cùng vài
+                  lát ớt hoặc nước mắm chua ngọt để chấm kèm cá chép nhé!
+                </p>
+                <h2 class="post__heading" id="qs-1">
+                  Lẩu cá chép giòn ăn với rau gì?
+                </h2>
+                <p class="post__text">
+                  Với món lẩu cá chép giòn bạn có thể ăn kèm với các loại rau
+                  như: Rau cần, bắp chuối, rau muống, bạc hà, cải thảo, cải cúc…
+                  Bên cạnh đó, bạn cũng có thể ăn kèm với các loại nấm như nấm
+                  rơm, nấm hương… Tùy vào sở thích mà bạn chọn loại rau cho phù
+                  hợp.
+                </p>
+                <figure class="post__img">
+                  <img
+                    src="./images/blog/lau-ca-chep-gion-bo-duong.jpg"
+                    alt="Lẩu cá chép giòn bổ dưỡng"
+                  />
+                  <figcaption>Lẩu cá chép giòn bổ dưỡng</figcaption>
+                </figure>
+                <h2 class="post__heading" id="qs-2">
+                  Lưu ý khi nấu lẩu cá chép giòn
+                </h2>
+                <p class="post__text">
+                  Bạn nên thực hiện cẩn thận bước sơ chế cá chép để món ăn không
+                  có mùi tanh.
+                </p>
+                <p class="post__text">
+                  Nếu không có mẻ, bạn có thể dùng me để thay thế. Món lẩu cá
+                  chép giòn có thể biến tấu cùng với măng chua, do đó nếu thích
+                  bạn có thể cho thêm măng chua vào là thành món lẩu cá chép
+                  măng chua rồi đấy!
+                </p>
+                <p class="post__text">
+                  Bạn có thể cắt cá chép thành từng miếng hoặc khúc rồi nhúng
+                  cùng với rau khi ăn hoặc có thể nấu như cách trên. Tuy nhiên,
+                  nếu bạn nhúng cùng với rau, bạn nên cho đầu cá vào nấu trước
+                  vì đầu cá lâu chín hơn.
+                </p>
+                <h2 class="post__heading" id="summary">Tổng kết</h2>
+                <p class="post__text">
+                  Với cách làm lẩu cá chép giòn đơn giản cùng những lưu ý khi
+                  nấu món lẩu như trên, hy vọng rằng, bạn có thể trổ tài để mang
+                  đến món lẩu thơm ngon cho gia đình và người thân của mình nhé!
+                  Chúc bạn thành công.
+                </p>
+                <a href="./index.html" class="btn btn--fill post__back"
+                  >Trở Về Trang Chủ</a
+                >
+              </div>
+              <div class="post-nav">
+                <ul class="post-nav-list">
+                  <li><a href="#ingredient">Nguyên liệu</a></li>
+                  <li>
+                    <a href="#step-1">Bước 1: Sơ chế nguyên liệu</a>
+                  </li>
+                  <li><a href="#step-2">Bước 2: Nấu nước dùng</a></li>
+                  <li><a href="#step-3">Bước 3: Nấu lẩu</a></li>
+                  <li><a href="#step-4">Bước 4: Hoàn thành</a></li>
+                  <li>
+                    <a href="#qs-1">Lẩu cá chép giòn ăn với rau gì?</a>
+                  </li>
+                  <li>
+                    <a href="#qs-2">Lưu ý khi nấu lẩu cá chép giòn</a>
+                  </li>
+                  <li><a href="#summary">Tổng kết</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-top">
+            <!-- LOGO COL -->
+            <div class="footer-logo-col">
+              <a class="footer-logo-col__link" href="./index.html">
+                <img
+                  class="footer-logo-col__img"
+                  src="./images/logo.svg"
+                  alt="Green Mart"
+                />
+              </a>
+              <p class="footer-logo-col__desc">
+                Green Mart - Chuỗi Siêu Thị Xanh An toàn chuyên cung cấp thực
+                phẩm tươi, đảm bảo vệ sinh.
+              </p>
+              <ul class="footer-logo-col__info">
+                <li>
+                  <ion-icon
+                    class="footer-logo-col__info-icon"
+                    name="call-outline"
+                  ></ion-icon>
+                  <a href="tel: 19001928">1900 1928</a>
+                </li>
+                <li>
+                  <ion-icon
+                    class="footer-logo-col__info-icon"
+                    name="map-outline"
+                  ></ion-icon>
+                  <a
+                    href="https://goo.gl/maps/y5G6Pk81J6BMdHXy9"
+                    target="_blank"
+                    >02 Thanh Sơn, Thanh Bình, Hải Châu, Đà Nẵng</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- CUSTOMER SUPPORT COL -->
+            <div class="footer-col">
+              <h3 class="footer-col__title">CHĂM SÓC KHÁCH HÀNG</h3>
+              <ul class="footer-col__list">
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Trung Tâm Trợ Giúp</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Tạp Chí Nấu Ăn</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Hình Thức Thanh Toán</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Vận Chuyển</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Trả Hàng & Hoàn Tiền</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Chính Sách Bảo Hành</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- ABOUT GREEN MART COL -->
+            <div class="footer-col">
+              <h3 class="footer-col__title">VỀ GREEN MART</h3>
+              <ul class="footer-col__list">
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank">
+                    Giới Thiệu Về Green Mart
+                  </a>
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Tuyển Dụng</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Điều Khoản Sử Dụng</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Chính Sách Bảo Mật</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank">
+                    Chương Trình Tiếp Thị Liên Kết
+                  </a>
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Kênh Người Bán</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- CONNECT TO G.M -->
+            <div class="footer-col">
+              <h3 class="footer-col__title mb-16">KẾT NỐI</h3>
+              <ul class="footer-col__social">
+                <li>
+                  <a href="#" target="_blank">
+                    <ion-icon
+                      class="footer-col__social-icon"
+                      name="logo-facebook"
+                    ></ion-icon>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <img
+                      class="footer-col__social-icon"
+                      src="./images/instagram.svg"
+                      alt=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <ion-icon
+                      class="footer-col__social-icon"
+                      name="logo-linkedin"
+                    ></ion-icon>
+                  </a>
+                </li>
+              </ul>
+              <h3 class="footer-col__title mb-12">CTY TNHH G.MART</h3>
+              <a href="#" target="_blank">
+                <img
+                  src="./images/bo-cong-thuong.png"
+                  alt="Đã thông báo với bộ công thương"
+                  class="footer-col__cert"
+                />
+              </a>
+            </div>
+          </div>
+          <!-- COPYRIGHT TEXT -->
+          <div class="footer-bottom">
+            <p>&copy; 2022 Green Mart. Tất cả các quyền được bảo lưu.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/blog_script.js"></script>
+  </body>
+</html>

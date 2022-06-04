@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Mart - Siêu Thị Xanh</title>
+    <link rel="icon" href="./images/favicon.svg" type="image/x-icon" />
+    <!-- Icon -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="container">
+          <div class="header-main">
+            <!-- LOGO -->
+            <a href="./index.html" class="header-logo__link">
+              <img
+                src="./images/logo.svg"
+                alt="Green Mart - Sieu Thi Xanh"
+                class="header-logo__img"
+              />
+            </a>
+
+            <!-- SEARCH BAR -->
+            <div class="header-search">
+              <input
+                type="text"
+                class="header-search__box"
+                placeholder="Lốc 4 hộp sữa TH True Milk - Giá chỉ 25K"
+                oninput="searchText()"
+                maxlength="128"
+              />
+              <button class="header-search__btn">
+                <ion-icon
+                  class="header-search__btn-icon"
+                  name="search-outline"
+                ></ion-icon>
+              </button>
+              <div class="header-search__suggest">
+                <ul class="suggest-list">
+                  <li>
+                    <a href="#" class="suggest-content"
+                      >Lốc 4 hộp sữa TH True Milk - Giá chỉ 25K</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- TOOLS -->
+            <ul class="header-tool">
+              <li class="header-tool__hotline">
+                <a href="tel: 19001928">
+                  1900 1928
+                  <span>Hỗ trợ 24/7</span>
+                </a>
+              </li>
+              <li class="header-tool__notify">
+                <a href="#">
+                  <ion-icon
+                    class="header-tool__icon"
+                    name="notifications-outline"
+                  ></ion-icon>
+                </a>
+                <span class="header-tool__title">Thông báo</span>
+                <div class="header-notify">
+                  <div class="header-notify--notlogin">
+                    <img src="./images/notify-img.png" alt=":((" />
+                    <p>Đăng nhập để xem Thông báo</p>
+                  </div>
+                </div>
+              </li>
+              <li class="header-tool__auth">
+                <a href="#">
+                  <ion-icon
+                    class="header-tool__icon"
+                    name="person-circle-outline"
+                  ></ion-icon>
+                </a>
+                <span class="header-tool__title">Đăng Nhập</span>
+              </li>
+              <li class="header-tool__cart">
+                <a href="#">
+                  <ion-icon
+                    class="header-tool__icon"
+                    name="cart-outline"
+                  ></ion-icon>
+                </a>
+                <span class="header-tool__title">Giỏ hàng</span>
+                <div class="header-cart">
+                  <div class="header-cart--empty">
+                    <img
+                      src="./images/cart-img.png"
+                      alt="Chưa có sản phẩm nào"
+                    />
+                    <p>Chưa Có Sản Phẩm</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <!-- LOGIN / SIGNUP FORM -->
+            <div class="overlay"></div>
+            <div class="header-auth">
+              <!-- LOGIN FORM -->
+              <form action="#" class="form--login" onsubmit="return false">
+                <h2 class="form__name">Đăng nhập</h2>
+                <div class="form__field">
+                  <input
+                    type="text"
+                    placeholder="Email / Số điện thoại / Tên đăng nhập"
+                  />
+                </div>
+                <div class="form__field form__password-box">
+                  <input type="password" placeholder="Mật khẩu" />
+                  <ion-icon
+                    class="form__password-box__icon"
+                    name="eye-outline"
+                  ></ion-icon>
+                </div>
+                <input type="submit" value="ĐĂNG NHẬP" class="form__submit" />
+                <a href="#" class="form__forgot">Quên mật khẩu</a>
+                <span class="form__break">Hoặc</span>
+                <ul class="form__social">
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./images/facebook-logo.svg"
+                        alt="Facebook-Logo"
+                        class="form__social__icon"
+                      />
+                      <span>Facebook</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./images/google-logo.svg"
+                        alt="google-Logo"
+                        class="form__social__icon"
+                      />
+                      <span>Google</span>
+                    </a>
+                  </li>
+                </ul>
+                <p class="form__text">
+                  Bạn chưa có tài khoản?
+                  <a href="#" class="form__signup-link">Đăng Ký</a>
+                </p>
+              </form>
+
+              <!-- SIGNUP FORM -->
+              <form action="#" class="form--signup" onsubmit="return false">
+                <h2 class="form__name">Đăng ký</h2>
+                <div class="form__field">
+                  <input
+                    type="text"
+                    placeholder="Email / Số điện thoại / Tên đăng nhập"
+                  />
+                </div>
+                <div class="form__field form__password-box">
+                  <input type="password" placeholder="Mật khẩu" />
+                </div>
+                <div class="form__field form__password-box">
+                  <input type="password" placeholder="Xác nhận mật khẩu" />
+                  <ion-icon
+                    class="form__password-box__icon"
+                    name="eye-outline"
+                  ></ion-icon>
+                </div>
+                <input type="submit" value="ĐĂNG KÝ" class="form__submit" />
+                <p class="form__text">
+                  Bằng việc đăng ký, bạn đồng ý với Green Mart về
+                  <a href="">chính sách bảo mật</a> &
+                  <a href="">điều khoản dịch vụ</a>
+                </p>
+                <span class="form__break">Hoặc</span>
+                <ul class="form__social">
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./images/facebook-logo.svg"
+                        alt="Facebook-Logo"
+                        class="form__social__icon"
+                      />
+                      <span>Facebook</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./images/google-logo.svg"
+                        alt="google-Logo"
+                        class="form__social__icon"
+                      />
+                      <span>Google</span>
+                    </a>
+                  </li>
+                </ul>
+                <p class="form__text">
+                  Bạn đã có tài khoản?
+                  <a href="#" class="form__signup-link">Đăng Nhập</a>
+                </p>
+              </form>
+            </div>
+
+            <!-- Mobile Nav -->
+            <ion-icon class="mobile-nav__icon" name="menu-outline"></ion-icon>
+          </div>
+        </div>
+      </header>
+      <!-- MAIN -->
+      <main>
+        <!-- SCROLL TO TOP -->
+        <div class="scroll-to-top">
+          <ion-icon
+            class="scroll-to-top__icon"
+            name="chevron-up-outline"
+          ></ion-icon>
+        </div>
+        <!-- BANNER -->
+        <section class="banner-section">
+          <div class="container">
+            <div class="banner-main">
+              <div class="banner-left">
+                <img src="./images/banner/Banner-1.png" alt="" />
+              </div>
+              <div class="banner-right">
+                <a href="#" target="_blank" class="banner-right__link">
+                  <img
+                    src="./images/banner/Banner right.png"
+                    alt="Quốc Tế Ăn Ngon - Thiếu Nhi Chóng Lớn"
+                    class="banner-right__img"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- CATEGORY -->
+        <section class="category-section">
+          <div class="container">
+            <div class="category-main">
+              <h2 class="heading-secondary">DANH MỤC</h2>
+              <ul class="category-list">
+                <li>
+                  <a class="category-item" href="#" target="_blank">
+                    <div class="category-item__img">
+                      <img
+                        src="./images/category/rau-tuoi.png"
+                        alt="Rau tươi"
+                      />
+                    </div>
+                    <p class="category-item__name">Rau tươi</p>
+                  </a>
+                </li>
+                <li>
+                  <a class="category-item" href="#" target="_blank">
+                    <div class="category-item__img">
+                      <img
+                        src="./images/category/trai-cay.png"
+                        alt="Trái cây"
+                      />
+                    </div>
+                    <p class="category-item__name">Trái cây</p>
+                  </a>
+                </li>
+                <li>
+                  <a class="category-item" href="#" target="_blank">
+                    <div class="category-item__img">
+                      <img
+                        src="./images/category/hai-san.png"
+                        alt="Hải sản đông lạnh"
+                      />
+                    </div>
+                    <p class="category-item__name">Hải sản đông lạnh</p>
+                  </a>
+                </li>
+                <li>
+                  <a class="category-item" href="#" target="_blank">
+                    <div class="category-item__img">
+                      <img
+                        src="./images/category/thit-tuoi.png"
+                        alt="Thịt tươi sống"
+                      />
+                    </div>
+                    <p class="category-item__name">Thịt tươi sống</p>
+                  </a>
+                </li>
+                <li>
+                  <a class="category-item" href="#" target="_blank">
+                    <div class="category-item__img">
+                      <img
+                        src="./images/category/trung-sua.png"
+                        alt="Trứng và sữa tươi"
+                      />
+                    </div>
+                    <p class="category-item__name">Trứng và sữa tươi</p>
+                  </a>
+                </li>
+                <li>
+                  <a class="category-item" href="#" target="_blank">
+                    <div class="category-item__img">
+                      <img src="./images/category/banh-mi.png" alt="Bánh mì" />
+                    </div>
+                    <p class="category-item__name">Bánh mì</p>
+                  </a>
+                </li>
+                <li>
+                  <a class="category-item" href="#" target="_blank">
+                    <div class="category-item__img">
+                      <img
+                        src="./images/category/cafe.png"
+                        alt="Cà phê và trà"
+                      />
+                    </div>
+                    <p class="category-item__name">Cà phê và trà</p>
+                  </a>
+                </li>
+                <li>
+                  <a class="category-item" href="#" target="_blank">
+                    <div class="category-item__img">
+                      <img
+                        src="./images/category/nuoc-ngot.png"
+                        alt="Nước ngọt"
+                      />
+                    </div>
+                    <p class="category-item__name">Nước ngọt</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- FLASHSALE -->
+        <section class="flashsale-section">
+          <div class="container">
+            <div class="flashsale-main">
+              <div class="flashsale-header">
+                <h2 class="heading-secondary gr-cl">ĐANG KHUYẾN MÃI</h2>
+                <a href="#" target="_blank" class="flashsale-header__link"
+                  >Xem tất cả ></a
+                >
+              </div>
+              <ul class="flashsale-grid">
+                <li>
+                  <a href="#" class="flashsale-product" target="_blank">
+                    <label class="flashsale-product__label">-5%</label>
+                    <img
+                      src="./images/products/loc-sua.png"
+                      alt="Lốc 4 hộp sữa Vinamilk"
+                      class="flashsale-product__img"
+                    />
+                    <span class="flashsale-product__price">29.000đ</span>
+                    <div class="flashsale-product__progress" data-qantity="80">
+                      Đã bán 19
+                      <div class="flashsale-product__progress-thumb"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flashsale-product" target="_blank">
+                    <label class="flashsale-product__label">-13%</label>
+                    <img
+                      src="./images/products/banh-gao.png"
+                      alt="Bánh gạo ngọt vị phô mai bắp One One gói 118g"
+                      class="flashsale-product__img"
+                    />
+                    <span class="flashsale-product__price">29.700đ</span>
+                    <div class="flashsale-product__progress" data-qantity="200">
+                      Đã bán 140
+                      <div class="flashsale-product__progress-thumb"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flashsale-product" target="_blank">
+                    <label class="flashsale-product__label">-13%</label>
+                    <img
+                      src="./images/products/sua-chua.png"
+                      alt="Lốc 4 chai sữa chua uống Probi light ít đường 130ml"
+                      class="flashsale-product__img"
+                    />
+                    <span class="flashsale-product__price">31.600đ</span>
+                    <div class="flashsale-product__progress" data-qantity="120">
+                      Đã bán 42
+                      <div class="flashsale-product__progress-thumb"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flashsale-product" target="_blank">
+                    <label class="flashsale-product__label">-26%</label>
+                    <img
+                      src="./images/products/sua-uong.png"
+                      alt="Sữa tươi nguyên kem tiệt trùng Lemontree Dairy hộp 1L"
+                      class="flashsale-product__img"
+                    />
+                    <span class="flashsale-product__price">29.900đ</span>
+                    <div class="flashsale-product__progress" data-qantity="67">
+                      Đã bán 28
+                      <div class="flashsale-product__progress-thumb"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flashsale-product" target="_blank">
+                    <label class="flashsale-product__label">-11%</label>
+                    <img
+                      src="./images/products/banh-karo.png"
+                      alt="Lốc 6 gói bánh trứng Karo chà bông 26g"
+                      class="flashsale-product__img"
+                    />
+                    <span class="flashsale-product__price">31.500đ</span>
+                    <div class="flashsale-product__progress" data-qantity="100">
+                      Đã bán 30
+                      <div class="flashsale-product__progress-thumb"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flashsale-product" target="_blank">
+                    <label class="flashsale-product__label">-13%</label>
+                    <img
+                      src="./images/products/pho-mai.png"
+                      alt="Phô mai Vinamilk hộp 120g (8 miếng)"
+                      class="flashsale-product__img"
+                    />
+                    <span class="flashsale-product__price">25.400đ</span>
+                    <div class="flashsale-product__progress" data-qantity="25">
+                      Đã bán 19
+                      <div class="flashsale-product__progress-thumb"></div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- TOPSALE -->
+        <section class="topsale-section">
+          <div class="container">
+            <div class="topsale-main">
+              <h2 class="heading-secondary">SẢN PHẨM BÁN CHẠY</h2>
+              <ul class="topsale-grid">
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/tao-queen.png"
+                      alt="Táo Queen New Zealand PG size 90-120"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Táo Queen New Zealand PG size 90-120
+                    </p>
+                    <span class="topsale-product__price">99.900đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/dua-luoi.png"
+                      alt="Dưa lưới sạch Đế Vương King size ruột xanh"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Dưa lưới sạch Đế Vương King size ruột xanh
+                    </p>
+                    <span class="topsale-product__price">89.000đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/ca-chua.png"
+                      alt="Cà chua Đà Lạt"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">Cà chua Đà Lạt</p>
+                    <span class="topsale-product__price">8.600đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/cai-chip.png"
+                      alt="Cải chíp"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">Cải chíp</p>
+                    <span class="topsale-product__price">8.640đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/bap-cai.png"
+                      alt="Bắp cải trắng"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">Bắp cải trắng</p>
+                    <span class="topsale-product__price">16.141đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/mong-gio.png"
+                      alt="Móng giò Meat Deli Premium (S)"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Móng giò Meat Deli Premium (S)
+                    </p>
+                    <span class="topsale-product__price">59.960đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/kim-chi.png"
+                      alt="Kim chi cải thảo cắt lát Ông Kim's túi 100g"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Kim chi cải thảo cắt lát Ông Kim's túi 100g
+                    </p>
+                    <span class="topsale-product__price">13.300đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/ha-cao-tom.png"
+                      alt="Há cảo tôm cua Thực Phẩm Cầu Tre gói 500g"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Há cảo tôm cua Thực Phẩm Cầu Tre gói 500g
+                    </p>
+                    <span class="topsale-product__price">63.600đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/cai-xanh.png"
+                      alt="Cải xanh"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">Cải xanh</p>
+                    <span class="topsale-product__price">9.240đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/bo-vien.png"
+                      alt="Bò viên Việt Nam Tân Việt Sin gói 200g"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Bò viên Việt Nam Tân Việt Sin gói 200g
+                    </p>
+                    <span class="topsale-product__price">53.000đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/mi-goi.png"
+                      alt="Mì gói ăn liền cay Shin Ramyun Nongshim 114g"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Mì gói ăn liền cay Shin Ramyun Nongshim 114g
+                    </p>
+                    <span class="topsale-product__price">20.300đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/thit-heo.png"
+                      alt="Nạc thăn heo Meat Deli (S)"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Nạc thăn heo Meat Deli (S)
+                    </p>
+                    <span class="topsale-product__price">51.960đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/tao-queen.png"
+                      alt="Táo Queen New Zealand PG size 90-120"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Táo Queen New Zealand PG size 90-120
+                    </p>
+                    <span class="topsale-product__price">99.900đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/dua-luoi.png"
+                      alt="Dưa lưới sạch Đế Vương King size ruột xanh"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Dưa lưới sạch Đế Vương King size ruột xanh
+                    </p>
+                    <span class="topsale-product__price">89.000đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/ca-chua.png"
+                      alt="Cà chua Đà Lạt"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">Cà chua Đà Lạt</p>
+                    <span class="topsale-product__price">8.600đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/cai-chip.png"
+                      alt="Cải chíp"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">Cải chíp</p>
+                    <span class="topsale-product__price">8.640đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/bap-cai.png"
+                      alt="Bắp cải trắng"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">Bắp cải trắng</p>
+                    <span class="topsale-product__price">16.141đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/mong-gio.png"
+                      alt="Móng giò Meat Deli Premium (S)"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Móng giò Meat Deli Premium (S)
+                    </p>
+                    <span class="topsale-product__price">59.960đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/kim-chi.png"
+                      alt="Kim chi cải thảo cắt lát Ông Kim's túi 100g"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Kim chi cải thảo cắt lát Ông Kim's túi 100g
+                    </p>
+                    <span class="topsale-product__price">13.300đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/ha-cao-tom.png"
+                      alt="Há cảo tôm cua Thực Phẩm Cầu Tre gói 500g"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Há cảo tôm cua Thực Phẩm Cầu Tre gói 500g
+                    </p>
+                    <span class="topsale-product__price">63.600đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/cai-xanh.png"
+                      alt="Cải xanh"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">Cải xanh</p>
+                    <span class="topsale-product__price">9.240đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/bo-vien.png"
+                      alt="Bò viên Việt Nam Tân Việt Sin gói 200g"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Bò viên Việt Nam Tân Việt Sin gói 200g
+                    </p>
+                    <span class="topsale-product__price">53.000đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/mi-goi.png"
+                      alt="Mì gói ăn liền cay Shin Ramyun Nongshim 114g"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Mì gói ăn liền cay Shin Ramyun Nongshim 114g
+                    </p>
+                    <span class="topsale-product__price">20.300đ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="topsale-product" target="_blank">
+                    <img
+                      src="./images/products/thit-heo.png"
+                      alt="Nạc thăn heo Meat Deli (S)"
+                      class="topsale-product__img"
+                    />
+                    <p class="topsale-product__name">
+                      Nạc thăn heo Meat Deli (S)
+                    </p>
+                    <span class="topsale-product__price">51.960đ</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="topsale-circle-loading"></div>
+              <button class="topsale-btn btn btn--fill">Xem Thêm</button>
+            </div>
+          </div>
+        </section>
+        <!-- BLOG -->
+        <section class="blog-section">
+          <div class="container">
+            <div class="blog-main">
+              <div class="blog-left">
+                <h2 class="heading-secondary no-bd">HÔM NAY ĂN GÌ ?</h2>
+                <ul class="blog-post">
+                  <li>
+                    <a href="./blog.html" class="post-item" target="_blank">
+                      <div class="post-item__img">
+                        <img
+                          src="./images/blog/post-1.png"
+                          alt="Cách nấu lẩu cá chép giòn"
+                        />
+                      </div>
+                      <span class="post-item__time">25 tháng 05, 2022</span>
+                      <h3 class="post-item__title">
+                        Cách nấu lẩu cá chép giòn
+                      </h3>
+                      <p class="post-item__desc">
+                        Lẩu cá chép giòn có vị chua chua, the the nơi đầu lưỡi
+                        kết hợp với độ săn chắc của cá mang đến những hương vị
+                        mới mẻ và hấp dẫn. Trong bài viết sau đây, hãy cùng CET
+                        tìm hiểu cách làm món lẩu cá chép giòn này nhé!
+                      </p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="post-item" target="_blank">
+                      <div class="post-item__img">
+                        <img
+                          src="./images/blog/post-2.png"
+                          alt="Sườn rim, canh bắp cải cuộn và cải thìa hấp"
+                        />
+                      </div>
+                      <span class="post-item__time">24 tháng 05, 2022</span>
+                      <h3 class="post-item__title">
+                        Sườn rim, canh bắp cải cuộn và cải thìa hấp
+                      </h3>
+                      <p class="post-item__desc">
+                        Cần món ăn đơn giản, nhanh gọn mà thanh mát, thì thực
+                        đơn gồm sườn rim mặn, canh bắp cải cuộn thanh mát và cải
+                        thìa hấp xanh có thể là thực đơn phù hợp
+                      </p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="banner-app">
+                <p class="banner-title">
+                  Tải App Green Mart <br />
+                  Nhận ưu đãi 15%
+                </p>
+                <span class="banner-desc">Từ 22/5 - 22/6</span>
+                <ul class="banner-links">
+                  <li>
+                    <a href="#" target="_blank"
+                      ><img src="./images/Download on Appstore.png" alt=""
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><img src="./images/Download on Google Play.png" alt=""
+                    /></a>
+                  </li>
+                </ul>
+                <img src="./images/phonemockup.png" alt="" class="banner-img" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-top">
+            <!-- LOGO COL -->
+            <div class="footer-logo-col">
+              <a class="footer-logo-col__link" href="./index.html">
+                <img
+                  class="footer-logo-col__img"
+                  src="./images/logo.svg"
+                  alt="Green Mart"
+                />
+              </a>
+              <p class="footer-logo-col__desc">
+                Green Mart - Chuỗi Siêu Thị Xanh An toàn chuyên cung cấp thực
+                phẩm tươi, đảm bảo vệ sinh.
+              </p>
+              <ul class="footer-logo-col__info">
+                <li>
+                  <ion-icon
+                    class="footer-logo-col__info-icon"
+                    name="call-outline"
+                  ></ion-icon>
+                  <a href="tel: 19001928">1900 1928</a>
+                </li>
+                <li>
+                  <ion-icon
+                    class="footer-logo-col__info-icon"
+                    name="map-outline"
+                  ></ion-icon>
+                  <a
+                    href="https://goo.gl/maps/y5G6Pk81J6BMdHXy9"
+                    target="_blank"
+                    >02 Thanh Sơn, Thanh Bình, Hải Châu, Đà Nẵng</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- CUSTOMER SUPPORT COL -->
+            <div class="footer-col">
+              <h3 class="footer-col__title">CHĂM SÓC KHÁCH HÀNG</h3>
+              <ul class="footer-col__list">
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Trung Tâm Trợ Giúp</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Tạp Chí Nấu Ăn</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Hình Thức Thanh Toán</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Vận Chuyển</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Trả Hàng & Hoàn Tiền</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Chính Sách Bảo Hành</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- ABOUT GREEN MART COL -->
+            <div class="footer-col">
+              <h3 class="footer-col__title">VỀ GREEN MART</h3>
+              <ul class="footer-col__list">
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank">
+                    Giới Thiệu Về Green Mart
+                  </a>
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Tuyển Dụng</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Điều Khoản Sử Dụng</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Chính Sách Bảo Mật</a
+                  >
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank">
+                    Chương Trình Tiếp Thị Liên Kết
+                  </a>
+                </li>
+                <li>
+                  <a class="footer-col__link" href="#" target="_blank"
+                    >Kênh Người Bán</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- CONNECT TO G.M -->
+            <div class="footer-col">
+              <h3 class="footer-col__title mb-16">KẾT NỐI</h3>
+              <ul class="footer-col__social">
+                <li>
+                  <a href="#" target="_blank"
+                    ><ion-icon
+                      class="footer-col__social-icon"
+                      name="logo-facebook"
+                    ></ion-icon
+                  ></a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <img
+                      class="footer-col__social-icon"
+                      src="./images/instagram.svg"
+                      alt=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"
+                    ><ion-icon
+                      class="footer-col__social-icon"
+                      name="logo-linkedin"
+                    ></ion-icon
+                  ></a>
+                </li>
+              </ul>
+              <h3 class="footer-col__title mb-12">CTY TNHH G.MART</h3>
+              <a href="#" target="_blank">
+                <img
+                  src="./images/bo-cong-thuong.png"
+                  alt="Đã thông báo với bộ công thương"
+                  class="footer-col__cert"
+                />
+              </a>
+            </div>
+          </div>
+          <!-- COPYRIGHT TEXT -->
+          <div class="footer-bottom">
+            <p>&copy; 2022 Green Mart - Thiết kế bởi Đặng Văn Trung</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
