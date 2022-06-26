@@ -15,6 +15,11 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <!-- Slider -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
     <!-- CSS -->
     <link rel="stylesheet" href="./css/app.css" />
   </head>
@@ -234,8 +239,33 @@
         <section class="banner-section">
           <div class="container">
             <div class="banner-main">
-              <div class="banner-left">
-                <img src="./images/banner/Banner-1.png" alt="" />
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="./images/banner/Banner (1).jpg" alt="" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/banner/Banner (2).jpg" alt="" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/banner/Banner (3).jpg" alt="" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/banner/Banner (4).jpg" alt="" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/banner/Banner (5).jpg" alt="" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/banner/Banner (6).jpg" alt="" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/banner/Banner (7).jpg" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
               </div>
               <div class="banner-right">
                 <a href="#" target="_blank" class="banner-right__link">
@@ -986,6 +1016,9 @@
         </div>
       </footer>
     </div>
+
+    <!-- Script -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
